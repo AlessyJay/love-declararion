@@ -1,12 +1,10 @@
 import confetti from "canvas-confetti";
 import { AnimatePresence, motion } from "framer-motion";
-import { Heart, ImageIcon, PauseCircle, PlayCircle } from "lucide-react";
+import { Heart } from "lucide-react";
 import { useState } from "react";
 
 const LoveDeclaration = () => {
   const [showMessage, setShowMessage] = useState<boolean>(false);
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [showGallery, setShowGallery] = useState<boolean>(false);
 
   const handleHeartClick = () => {
     setShowMessage(true);
@@ -19,13 +17,13 @@ const LoveDeclaration = () => {
 
   return (
     <section
-      id="love-declaration"
+      id="love-story"
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden"
     >
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black opacity-30" />
         <img
-          src="/public/wife/IMG_1351.JPG"
+          src="/wife/IMG_1351.JPG"
           alt="Love Background"
           className="h-full w-full object-cover"
         />
@@ -96,35 +94,11 @@ const LoveDeclaration = () => {
                 transition={{ repeat: Infinity, duration: 1.5 }}
                 onClick={handleHeartClick}
               >
-                <Heart className="fill-current text-pink-500" />
+                <Heart className="size-14 fill-current text-pink-500" />
               </motion.div>
             </motion.div>
           )}
         </motion.div>
-      </div>
-      <div className="relative z-10 mt-8 flex space-x-4">
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="rounded-full bg-pink-100 px-6 py-3 text-xl font-bold text-pink-500 shadow-lg transition-colors hover:bg-pink-200 md:text-2xl"
-          onClick={() => setShowGallery(!showGallery)}
-        >
-          <ImageIcon className="mr-2 inline-block" />
-          Our Photos
-        </motion.button>
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="rounded-full bg-pink-100 px-6 py-3 text-xl font-bold text-pink-500 shadow-lg transition-colors hover:bg-pink-200 md:text-2xl"
-          onClick={() => setIsPlaying(!isPlaying)}
-        >
-          {isPlaying ? (
-            <PauseCircle className="mr-2 inline-block" />
-          ) : (
-            <PlayCircle className="mr-2 inline-block" />
-          )}
-          {isPlaying ? "Pause Music" : "Play Music"}
-        </motion.button>
       </div>
     </section>
   );

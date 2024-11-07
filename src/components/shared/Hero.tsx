@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black opacity-30" />
         <img
-          src="/public/wife/IMG_1347.JPG"
+          src="/wife/IMG_1347.JPG"
           alt="background"
           className="size-full object-cover"
         />
