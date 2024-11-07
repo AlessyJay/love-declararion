@@ -1,10 +1,8 @@
 import { useState } from "react";
 
 const PhotoGallery = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [currentPhotoIndex, setCurrentPhotoIndex] = useState<number>(0);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [showGallery, setShowGallery] = useState<boolean>(false);
+  const [, setCurrentPhotoIndex] = useState<number>(0);
+  const [, setShowGallery] = useState<boolean>(false);
 
   const photos = [
     "/wife/IMG_1345.JPG",
